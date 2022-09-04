@@ -11,6 +11,7 @@ But some steps need to be followed before running the website on your localhost:
 * Step 2: Use **"git clone"** to clone the project **directly** into the path: xampp/htdocs/....
 * Step 3: Use the xampp interface and start "Apache" and "MySql" Module
 Now you can use " http://localhost/NutriologyPie/login " to run your project
+嗨嗨嗨
 
 ### How to use git：
 **Download link: https://git-scm.com/**
