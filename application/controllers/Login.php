@@ -25,25 +25,33 @@ class login extends CI_Controller {
 		$this->load->view('template/header');
 		$username = $this->input->post('username'); //getting username from login form
 		$password = $this->input->post('password'); //getting password from login form
+		$remember = $this->input->post('remember'); //getting remember checkbox from login form
+		$name = $this->user_model->get_data($username); 
 		if(!$this->session->userdata('logged_in')){	//Check if user already login
-			if ( $this->user_model->login($username, $password) )//check username and password
-			{
-				$user_data = array(
+			if ($this->user_model->check($username)){
+				if (password_verify($password, $name->password))//比较用户输入的密码和数据库中存的密码比对
+				{
+					$user_data = array(
 					'username' => $username,
-					'logged_in' => true 	//create session variable
-				);
-				$this->session->set_userdata($user_data); //set user status to login in session
-				redirect('login'); // direct user home page
-			}else
-			{
-				$this->load->view('login', $data);	//if username password incorrect, show error msg and ask user to login
-			}
+					'logged_in' => true, 	//create session variable
+					);
+					if($remember) { // if remember me is activated create cookie
+						set_cookie("username", $username, '300'); //set cookie username
+						set_cookie("password", $name->password, '300'); //set cookie password
+						set_cookie("remember", $remember, '300'); //set cookie remember
+					}
+					$this->session->set_userdata($user_data); //set user status to login in session
+					$this->load->view('welcome_message'); // direct user home page
+				} else {
+					$this->load->view('login', $data);
+				}
 		}else{
 			{
 				redirect('login'); //if user already logined direct user to home page
 			}
 		$this->load->view('template/footer');
 		}
+	}
 	}
 
 	public function logout()

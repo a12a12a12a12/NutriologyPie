@@ -14,8 +14,12 @@
 					<div class="form-group">
 						<button type="submit" class="btn btn-primary btn-block">Log in</button>
 					</div>
+					<div class="clearfix" style = "text-align: center">
+						<label class="text-center">Don't have an account?</label>
+						<a href="<?php echo base_url(); ?>regular_signup">Sign up</a>
+					</div> 
 					<div class="clearfix">
-						<label class="float-left form-check-label"><input type="checkbox"> Remember me</label>
+						<label class="float-left form-check-label"><input type="checkbox" name="remember"> Remember me</label>
 						<a href="#" class="float-right">Forgot Password?</a>
 					</div>    
 			<?php echo form_close(); ?>
