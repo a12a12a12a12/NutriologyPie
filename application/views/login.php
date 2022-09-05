@@ -19,6 +19,7 @@
 						<a href="<?php echo base_url(); ?>regular_signup">Sign up</a>
 					</div> 
 					<div class="clearfix">
+						<h1>1234miaaaaa</h1>
 						<label class="float-left form-check-label"><input type="checkbox" name="remember"> Remember me</label>
 						<a href="#" class="float-right">Forgot Password?</a>
 					</div>    
