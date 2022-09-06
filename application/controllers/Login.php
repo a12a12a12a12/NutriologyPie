@@ -62,7 +62,3 @@ class login extends CI_Controller {
 }
 ?>
 
-// Path: NutriologyPie\application\views\login.php
-
-//test 2
-
