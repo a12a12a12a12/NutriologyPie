@@ -5,5 +5,11 @@ import router from "./router/router.js";
 import store from "./store/state.js";
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
+import component from "./components/index.js";
 
-createApp(App).use(router).use(store).use(ElementPlus).mount("#app");
+const app = createApp(App)
+  .use(router)
+  .use(store)
+  .use(ElementPlus)
+  .use(component);
+app.mount("#app");
