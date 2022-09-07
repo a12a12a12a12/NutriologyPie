@@ -2,9 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 全局样式 */
+
 html,
 body,
 #app {
   height: 100%;
   width: 100%;
+  background-color: rgb(88, 62, 28);
 }

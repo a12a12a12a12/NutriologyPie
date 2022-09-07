@@ -1,5 +1,4 @@
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-
+//router 接收器 用于接收路由
 <template>
   <div class="h-full w-full">
     <router-view></router-view>

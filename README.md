@@ -33,5 +33,5 @@ But some steps need to be followed before running the website on your localhost:
 2. run "node -v" & "npm -v" to check the version
 3. run "npm install -g @vue/cli" to install vue.js
 4. run "vue --version" to check vue version
-5. cd to vue-front\my-project then run "npm install" to install all dependencies
+5. cd to front then run "npm install" to install all dependencies
 6. run "npm run dev" to run the project

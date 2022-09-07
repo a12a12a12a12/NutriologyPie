@@ -1,7 +1,7 @@
 //注册全局组件： header footer eg...
 
-import header from "./Header.vue";
+import navi from "./Header.vue";
 
 export default function install(app) {
-  app.component("top", header);
+  app.component("navi", navi);
 }
