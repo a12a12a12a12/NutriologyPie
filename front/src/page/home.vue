@@ -6,7 +6,12 @@
     >
       this is home page
     </div>
-    <button class="bg-[#0000FF] w-[100px]">456</button>
+    <button
+      type="button"
+      class="ml-10 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ..."
+    >
+      Hover me
+    </button>
   </div>
 </template>
 <script></script>

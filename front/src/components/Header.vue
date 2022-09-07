@@ -1,7 +1,7 @@
 <template>
-  <Disclosure as="nav" class="bg-gray-800" v-slot="{ open }">
-    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-      <div class="relative flex h-16 items-center justify-between">
+  <Disclosure as="nav" class="bg-[#f8fafc]" v-slot="{ open }">
+    <div class="mx-auto max-w-9xl px-2 sm:px-6 lg:px-8">
+      <div class="relative flex h-20 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile menu button-->
           <DisclosureButton
@@ -15,32 +15,28 @@
         <div
           class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
         >
-          <div class="flex flex-shrink-0 items-center">
-            <img
-              class="block h-8 w-auto lg:hidden"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-              alt="Your Company"
-            />
-            <img
-              class="hidden h-8 w-auto lg:block"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-              alt="Your Company"
-            />
-          </div>
-          <div class="hidden sm:ml-6 sm:block">
-            <div class="flex space-x-4">
-              <a
+          <router-link to="/">
+            <div
+              class="flex flex-shrink-0 items-center tracking-wider text-3xl"
+            >
+              <img class="pr-5" src="../assets/logo.png" alt="logo image" />
+              <div class="font-[1000] text-[#2c8f5a]">Nutriology</div>
+              <div class="text-[#69C761] pl-2 font-[1000]">Pie</div>
+            </div></router-link
+          >
+          <div class="hidden m-auto text-2xl sm:ml-2 sm:block">
+            <div class="flex space-x-4 ml-10">
+              <router-link
                 v-for="item in navigation"
                 :key="item.name"
-                :href="item.href"
+                :to="item.router"
                 :class="[
                   item.current
-                    ? 'bg-gray-900 text-white'
-                    : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                  'px-3 py-2 rounded-md text-sm font-medium',
+                    ? 'text-[#C6643D]  underline underline-offset-4 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-2xl font-medium'
+                    : 'text-[#5C5C5C]  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-2xl font-medium',
                 ]"
                 :aria-current="item.current ? 'page' : undefined"
-                >{{ item.name }}</a
+                >{{ item.name }}</router-link
               >
             </div>
           </div>
@@ -50,7 +46,7 @@
         >
           <button
             type="button"
-            class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+            class="rounded-full bg-[#3b82f6] p-1 text-[#dbeafe] hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
           >
             <span class="sr-only">View notifications</span>
             <BellIcon class="h-6 w-6" aria-hidden="true" />
@@ -82,13 +78,13 @@
                 class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
               >
                 <MenuItem v-slot="{ active }">
-                  <a
-                    href="#"
+                  <router-link
+                    to="profile"
                     :class="[
                       active ? 'bg-gray-100' : '',
                       'block px-4 py-2 text-sm text-gray-700',
                     ]"
-                    >Your Profile</a
+                    >Your Profile</router-link
                   >
                 </MenuItem>
                 <MenuItem v-slot="{ active }">
@@ -152,9 +148,16 @@ import {
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/vue/24/outline";
 
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
+  { name: "Home", router: "/", current: true },
+  { name: "Discover", router: "profile", current: false },
+  { name: "Contact", router: "login", current: false },
 ];
 </script>
+<style>
+/* .logo {
+  font-family: "Baloo Da";
+  font-style: normal;
+
+  color: #2c8f5a;
+} */
+</style>
