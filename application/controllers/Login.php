@@ -58,7 +58,7 @@ class login extends CI_Controller {
 	{
 		$this->session->unset_userdata('logged_in'); //delete login status
 		redirect('login'); // redirect user back to login
+		echo "logout";
 	}
 }
 ?>
-

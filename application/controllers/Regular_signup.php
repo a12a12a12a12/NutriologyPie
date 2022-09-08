@@ -26,6 +26,7 @@ class Regular_signup extends CI_Controller {
 		$this->load->helper('url');
         $this->load->view('template/header');
 		$this->load->view('regular_signup', $data);
+		echo "hello";
 	}
 
     public function __construct() {

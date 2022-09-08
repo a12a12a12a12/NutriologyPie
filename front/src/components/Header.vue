@@ -3,7 +3,7 @@
     <div class="mx-auto max-w-9xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-20 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-          <!-- Mobile menu button-->
+          <!-- Mobile menu button -->
           <DisclosureButton
             class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
           >
@@ -12,6 +12,7 @@
             <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" />
           </DisclosureButton>
         </div>
+        <!-- Left (Logo && navi) -->
         <div
           class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
         >
@@ -24,6 +25,7 @@
               <div class="text-[#69C761] pl-2 font-[1000]">Pie</div>
             </div></router-link
           >
+          <!-- navi -->
           <div class="hidden m-auto text-2xl sm:ml-2 sm:block">
             <div class="flex space-x-4 ml-10">
               <router-link
@@ -41,9 +43,20 @@
             </div>
           </div>
         </div>
+
+        <el-autocomplete
+          v-model="state"
+          :fetch-suggestions="querySearchAsync"
+          placeholder="Please search by topic"
+          @select="handleSelect"
+          clearable
+        />
+
+        <!-- Right (messaging && profile)-->
         <div
           class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
         >
+          <!-- Messaging -->
           <button
             type="button"
             class="rounded-full bg-[#3b82f6] p-1 text-[#dbeafe] hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -113,29 +126,28 @@
         </div>
       </div>
     </div>
-
+    <!-- 最小size -->
     <DisclosurePanel class="sm:hidden">
       <div class="space-y-1 px-2 pt-2 pb-3">
-        <DisclosureButton
+        <router-link
           v-for="item in navigation"
           :key="item.name"
-          as="a"
-          :href="item.href"
+          :to="item.router"
           :class="[
             item.current
-              ? 'bg-gray-900 text-white'
-              : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+              ? 'text-[#C6643D] underline underline-offset-4'
+              : 'text-[#5C5C5C] hover:bg-gray-700 hover:text-white',
             'block px-3 py-2 rounded-md text-base font-medium',
           ]"
           :aria-current="item.current ? 'page' : undefined"
-          >{{ item.name }}</DisclosureButton
+          >{{ item.name }}</router-link
         >
       </div>
     </DisclosurePanel>
   </Disclosure>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import {
   Disclosure,
   DisclosureButton,
@@ -146,12 +158,61 @@ import {
   MenuItems,
 } from "@headlessui/vue";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/vue/24/outline";
+import { onMounted, ref } from "vue";
 
 const navigation = [
   { name: "Home", router: "/", current: true },
   { name: "Discover", router: "profile", current: false },
   { name: "Contact", router: "login", current: false },
 ];
+
+// search box
+
+const state = ref("");
+
+interface LinkItem {
+  value: string;
+  link: string;
+}
+
+const links = ref<LinkItem[]>([]);
+
+const loadAll = () => {
+  return [
+    { value: "Healthy Eating", link: "" },
+    { value: "Meal Prep", link: "" },
+    { value: "Lifestyle Diets", link: "" },
+    { value: "Weight Control", link: "" },
+    { value: "Products", link: "" },
+  ];
+};
+
+let timeout;
+const querySearchAsync = (queryString: string, cb: (arg: any) => void) => {
+  const results = queryString
+    ? links.value.filter(createFilter(queryString))
+    : links.value;
+
+  clearTimeout(timeout);
+  timeout = setTimeout(() => {
+    cb(results);
+  }, 2000 * Math.random());
+};
+const createFilter = (queryString: string) => {
+  return (restaurant: LinkItem) => {
+    return (
+      restaurant.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0
+    );
+  };
+};
+
+const handleSelect = (item: LinkItem) => {
+  console.log(item);
+};
+
+onMounted(() => {
+  links.value = loadAll();
+});
 </script>
 <style>
 /* .logo {
