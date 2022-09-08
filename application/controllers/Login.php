@@ -7,14 +7,14 @@ class login extends CI_Controller {
 		$data['error']= "";
 		$this->load->helper('form');
 		$this->load->helper('url');
-		$this->load->view('template/header');
+		$this->load->view('components/header');
 		if (!$this->session->userdata('logged_in'))//check if user already login
 		{
 			$this->load->view('login', $data); //if user has not login ask user to login
 		}else{
 			$this->load->view('welcome_message'); //if user already logined show main page
 		}
-		$this->load->view('template/footer');
+		$this->load->view('components/footer');
 	}
 	public function check_login()
 	{
@@ -22,7 +22,7 @@ class login extends CI_Controller {
 		$data['error']= "<div class=\"alert alert-danger\" role=\"alert\"> Incorrect username or passwrod!! </div> ";
 		$this->load->helper('form');
 		$this->load->helper('url');
-		$this->load->view('template/header');
+		$this->load->view('components/header');
 		$username = $this->input->post('username'); //getting username from login form
 		$password = $this->input->post('password'); //getting password from login form
 		$remember = $this->input->post('remember'); //getting remember checkbox from login form
@@ -49,7 +49,7 @@ class login extends CI_Controller {
 			{
 				redirect('login'); //if user already logined direct user to home page
 			}
-		$this->load->view('template/footer');
+		$this->load->view('components/footer');
 		}
 	}
 	}
@@ -61,8 +61,3 @@ class login extends CI_Controller {
 	}
 }
 ?>
-
-// Path: NutriologyPie\application\views\login.php
-
-//test 2
-
