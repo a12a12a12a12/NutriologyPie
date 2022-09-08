@@ -24,7 +24,7 @@ class Regular_signup extends CI_Controller {
 		$data['error']= "";
 		$this->load->helper('form');
 		$this->load->helper('url');
-        $this->load->view('template/header');
+        $this->load->view('components/header');
 		$this->load->view('regular_signup', $data);
 	}
 
@@ -36,7 +36,7 @@ class Regular_signup extends CI_Controller {
     public function user_information() {
 		$this->load->helper('form');
 		$this->load->helper('url');
-		$this->load->view('template/header');
+		$this->load->view('components/header');
 		$this->load->model('user_model');
         $this->load->library('form_validation');
 		$data['error']= "";
