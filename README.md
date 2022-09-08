@@ -21,6 +21,7 @@ NutriologyPie
 ## How to set up vue enviorment && run with localhost:
 
 Directly **git pull** the repository to your local device.
+> If your device already have npm && vue enviorment then you might start from to **step 5**
 
 1. install node.js from https://nodejs.org/zh-cn/download/
 2. run "node -v" & "npm -v" to check the version
