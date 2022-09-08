@@ -14,7 +14,17 @@
     </button>
   </div>
 </template>
-<script></script>
+<script>
+//fetch data from api
+import { defineComponent } from "vue";
+import navi from "../components/navi.vue";
+export default defineComponent({
+  name: "home",
+  components: {
+    navi,
+  },
+});
+</script>
 
 // scoped to apply styles only to this component
 <style scoped>
