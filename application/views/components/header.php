@@ -3,6 +3,7 @@
 <head>
     <title>Nutriology Pie</title>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/bootstrap.css">
+    <link rel="shotcut icon" href="<?php echo base_url(); ?>assets/images/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="<?php echo base_url(); ?>assets/js/jquery-3.6.0.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
@@ -40,6 +41,7 @@ function toogle() {
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
+
                 </div>
                 <!-- Left (Logo && navi) -->
                 <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
@@ -70,7 +72,13 @@ function toogle() {
                                 class="text-[#5C5C5C]  hover:bg-[#2c8f5a]  hover:no-underline hover:text-white px-3 py-2 rounded-md ">Calendar</a>
                         </div>
                     </div>
+                    <div class="hidden sm:ml-6 sm:block my-auto">
+                        <input class="form-control m-auto" id="nav-search-bar" type="search" placeholder="Search"
+                            aria-label="Search" name="searchtext">
+                    </div>
+
                 </div>
+
                 <!-- Right (messaging && profile)-->
                 <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     <!-- Messaging -->
