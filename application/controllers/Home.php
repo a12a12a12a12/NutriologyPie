@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class login extends CI_Controller {
+class home extends CI_Controller {
 	public function index()
 	{
 		$data['error']= "";
@@ -14,8 +14,9 @@ class login extends CI_Controller {
 		}else{
 			$this->load->view('welcome_message'); //if user already logined show main page
 		}
-		// $this->load->view('components/footer');
+		$this->load->view('home');
 	}
+
 	public function check_login()
 	{
 		$this->load->model('user_model');		//load user model
