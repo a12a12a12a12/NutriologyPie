@@ -10,6 +10,7 @@ But some steps need to be followed before running the website on your localhost:
 * Step 1: Download the **Xampp** and install it: https://www.apachefriends.org/
 * Step 2: Use **"git clone"** to clone the project **directly** into the path: xampp/htdocs/....
 * Step 3: Use the xampp interface and start "Apache" and "MySql" Module
+* Step 4: Type "localhost"
 Now you can use " http://localhost/NutriologyPie/login " to run your project
 
 
@@ -20,5 +21,3 @@ Now you can use " http://localhost/NutriologyPie/login " to run your project
 * Commit your changes: **git commit -m""**
 * Push your code into the repo: **git push**
 > Before committing the code: Use **git status** to check what you have modified and **git add .** it
-
-
