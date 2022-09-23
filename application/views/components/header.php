@@ -19,6 +19,14 @@ function toogle() {
 }
 </script>
 
+<style>
+* {
+
+    margin: 0;
+    padding: 0;
+}
+</style>
+
 <body>
     <nav class="bg-[#f8fafc]">
         <div class="mx-auto max-w-9xl px-2 sm:px-6 lg:px-8">
@@ -73,7 +81,7 @@ function toogle() {
                         </div>
                     </div>
                     <div class="hidden sm:ml-6 sm:block my-auto">
-                        <input class="form-control m-auto" id="nav-search-bar" type="search" placeholder="Search"
+                        <input class="form-control m-auto w-96" id="nav-search-bar" type="search" placeholder="Search"
                             aria-label="Search" name="searchtext">
                     </div>
 
@@ -151,4 +159,4 @@ function toogle() {
             </div>
         </div>
     </nav>
-    <div class="container">
+    <div class="content">

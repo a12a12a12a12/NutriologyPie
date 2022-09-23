@@ -1,3 +1,4 @@
+</content>
 <footer>
     <div class="container">
         <div class="row vcenter">
@@ -8,5 +9,5 @@
     </div>
 </footer>
 </body>
-</html>
 
+</html>
