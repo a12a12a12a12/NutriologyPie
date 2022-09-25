@@ -12,6 +12,12 @@ But some steps need to be followed before running the website on your localhost:
 * Step 3: Use the xampp interface and start "Apache" and "MySql" Module
 Now you can use " http://localhost/NutriologyPie/login " to run your project
 
+Release MySQL -  do the following in CMD -run as admin
+**To check Port ID**
+netstat  -aon|findstr 3306
+**To kill the task**
+taskkill /F /PID 6088
+
 
 ### How to use git：
 **Download link: https://git-scm.com/**
