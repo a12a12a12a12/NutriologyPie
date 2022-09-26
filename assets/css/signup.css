@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    scroll-behavior:inherit;
+    font-size: 17px;
+}
+.sed_container {
+    position: relative;
+    content:"";
+    width: 100%;
+    height: 100%;
+    background: url("../img/signUp.png") no-repeat;
+    background-position: 0% 37%;
+    background-size: 48.5% 82%;
+}
+.register_container .signTitle {
+    font-size: 4rem;
+    position: absolute;
+    top: 25%;
+    word-break: break-word;
+    width: 45%;
+    font-family: Georgia, serif;
+    left: 4%;
+    line-height: 150%;
+    color: snow;
+}
+.register_container::before {
+    content:"";
+    position:absolute;
+    left: -30%;
+    top: 0;
+    width: 175%;
+    height: 100%;
+    background: url('../img/signUpBg.jpg') no-repeat;
+    background-size: cover;
+    opacity: 0.9;
+    animation: anim 20s linear infinite;
+    z-index: -1;
+}
+@keyframes anim {
+    25% {
+        filter:blur(1px);
+        transform: scale(1.05);
+    }
+    50%{
+        filter:blur(3px);
+        transform: scale(1.1);
+    }
+    75%{
+        filter:blur(5px);
+        transform: scale(1.15);
+    }
+    100%{
+        filter: inherit;
+        transform: scale(1);
+    }
+}
+.form-register{
+    background: transparent;
+    float: right;
+    width: 85%;
+    padding: 0 0 6% 7%;
+    border-left: 2.5px solid rgba(137, 136, 136, 0.7);
+    text-align: center;
+    margin: 17.5% 14% 18.5% 0;
+}
+.form-register .headingtext{
+    display: block;
+    background: url("../img/logo.png") no-repeat;
+    background-position:8% 14%;
+    background-size: 13% 59%;
+    font-size: 40px;
+    font-weight: 700;
+    color: lightslategrey;
+    padding: 0 0 7% 0;
+    margin: 7% 0 0 6%;
+    font-family: Georgia, serif;
+}
+.form-register .headingtext span{
+    color: darkgrey;
+    font-size: 40px;
+}
+.form-register .form-group{
+    margin: 0 0 4% 0;
+    position: relative;
+}
+.form-register .form-group span{
+    color: lightslategrey;
+    padding-left: 7%;
+    float: left;
+}
+.form-register .form-group2{
+    padding: 0 17%;
+    margin: 0 3% 1.7% 0;
+    position: relative;
+}
+.form-register .form-control{
+    margin: auto;
+    width: 85%;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 20px;
+    box-shadow: none;
+    padding: 0 0 0 11%;
+    height: 6%;
+    transition: all 0.3s ease 0s;
+}
+.form-register .form-control:focus{
+    background: #e0e0e0;
+    box-shadow: none;
+    outline: 0 none;
+}
+.form-register .form-group i{
+    position: absolute;
+    top: 17%;
+    left: 0;
+    font-size: 21px;
+    padding: 6.2% 9% 9% 11%;
+    color: #c8c8c8;
+    transition : all 0.5s ease 0s;
+}
+.form-register .form-control:focus + i{
+    color: #00b4ef;
+}
+.form-register .clogin  {
+    padding-right: 3%;
+}
+.form-register .clogin a {
+    color: #739774;
+}
+
+.form-register .clogin strong{
+    color: #1b1e21;
+}
+.form-register .btn{
+    width: 80%;
+    font-size: 22px;
+    color: #fff;
+    background: darkgrey;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    margin: 9% 9% 6%;
+    text-transform: capitalize;
+    transition: all 0.5s ease 0s;
+}
+.form-register .btn:hover{
+    background: lightslategrey;
+    text-decoration: underline;
+}
+@media only screen and (max-width: 500px){
+    .form-register .form-group{
+        padding: 0 25px;
+    }
+    .form-register .form-group i{
+        left: 45px;
+    }
+    .form-register .btn{
+        padding: 10px 20px;
+    }
+}

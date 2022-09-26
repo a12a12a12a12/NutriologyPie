@@ -6,6 +6,8 @@
             <script src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
             <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/login.css">
+            <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/signup.css">
+            <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/psw.css">
         </head>
         <body>
   <script>
@@ -58,6 +60,6 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
 </nav>
-<div class="container">
+
 
 

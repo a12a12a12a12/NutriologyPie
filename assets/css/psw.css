@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    scroll-behavior:inherit;
+    font-size: 17px;
+}
+.forgot_container::before {
+    content:"";
+    position:absolute;
+    left: -30%;
+    top: 0;
+    width: 175%;
+    height: 100%;
+    background: url('../img/loginBg2.jpg') no-repeat;
+    background-size: cover;
+    opacity: 0.9;
+    animation: anim 20s linear infinite;
+    z-index: -1;
+}
+@keyframes anim {
+    25% {
+        filter:blur(1px);
+        transform: scale(1.05);
+    }
+    50%{
+        filter:blur(3px);
+        transform: scale(1.1);
+    }
+    75%{
+        filter:blur(5px);
+        transform: scale(1.15);
+    }
+    100%{
+        filter: inherit;
+        transform: scale(1);
+    }
+}
+
+.form-reset{
+    background: transparent;
+    float: right;
+    width: 85%;
+    padding: 0 0 6% 7%;
+    border-left: 2.5px solid rgba(137, 136, 136, 0.7);
+    text-align: center;
+    margin: 17.5% 14% 18.5% 0;
+}
+.form-reset .headingtext{
+    display: block;
+    background: url("../img/logo.png") no-repeat;
+    background-position:3% 14%;
+    background-size: 12% 50%;
+    font-size: 40px;
+    font-weight: 700;
+    color: #2C8F5A;
+    padding: 0 0 7% 6%;
+    margin: 7% 0 0 6%;
+    font-family: Georgia, serif;
+}
+.form-reset .headingtext span{
+    color: #69C761;
+    font-size: 40px;
+}
+.form-reset .form-group{
+    margin: 0 0 4% 0;
+    position: relative;
+}
+.form-reset .form-group span{
+    color: lightslategrey;
+    padding-left: 7%;
+    float: left;
+}
+.form-reset .form-group2{
+    padding: 0 17%;
+    margin: 0 3% 1.7% 0;
+    position: relative;
+}
+.form-reset .form-control{
+    margin: auto;
+    width: 85%;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 20px;
+    box-shadow: none;
+    padding: 0 0 0 11%;
+    height: 6%;
+    transition: all 0.3s ease 0s;
+}
+.form-reset .form-control:focus{
+    background: #e0e0e0;
+    box-shadow: none;
+    outline: 0 none;
+}
+.form-reset .form-group i{
+    position: absolute;
+    top: 17%;
+    left: 0;
+    font-size: 21px;
+    padding: 6.2% 9% 9% 11%;
+    color: #c8c8c8;
+    transition : all 0.5s ease 0s;
+}
+.form-reset .form-control:focus + i{
+    color: #00b4ef;
+}
+.form-reset .clogin  {
+    padding-right: 3.5%;
+}
+.form-reset .clogin a {
+    color: #739774;
+}
+
+.form-reset .clogin strong{
+    color: #1b1e21;
+}
+.form-reset .btn{
+    width: 80%;
+    font-size: 22px;
+    color: #fff;
+    background: #69C761;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    margin: 9% 9% 6%;
+    text-transform: capitalize;
+    transition: all 0.5s ease 0s;
+}
+.form-reset .btn:hover{
+    background: #2C8F5A;
+    text-decoration: underline;
+}
+@media only screen and (max-width: 500px){
+    .form-reset .form-group{
+        padding: 0 25px;
+    }
+    .form-reset .form-group i{
+        left: 45px;
+    }
+    .form-reset .btn{
+        padding: 10px 20px;
+    }
+}
