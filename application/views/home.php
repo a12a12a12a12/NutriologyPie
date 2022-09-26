@@ -15,7 +15,7 @@
     </div>
     <div class="home-bottom">
         <div class="header">
-            <img class="h-30 w-96 pb-2" src="<?php echo base_url(); ?>assets/images/home1.png" alt="quick start">
+            <img class="h-30 w-96 pb-2" src="<?php echo base_url(); ?>assets/images/home.png" alt="quick start">
         </div>
         <div class="quick-start-icon">
             <div class="icon">
@@ -36,8 +36,6 @@
         </div>
     </div>
 </div>
-
-
 
 
 
