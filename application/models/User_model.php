@@ -15,5 +15,15 @@
             return false;
         }
     }
+
+     // Sign up data insert to Phpmyadmin users table
+     public function signup($email, $username, $password){
+         $signup_data = array(
+             'email' => $email,
+             'username' => $username,
+             'password' => $password
+         );
+         $this->db->insert('users', $signup_data);
+     }
 }
 ?>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1deb3+bionic1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- 主机： localhost
--- 生成日期： 2022-08-31 13:29:45
--- 服务器版本： 8.0.29
--- PHP 版本： 7.2.24-0ubuntu0.18.04.13
+-- 生成日期： 2022-09-27 04:40:19
+-- 服务器版本： 10.4.21-MariaDB
+-- PHP 版本： 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `articles` (
-  `id` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -38,13 +38,13 @@ CREATE TABLE `articles` (
 --
 
 CREATE TABLE `expert_user` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `certification_id` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `profile_photo` varchar(1000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -53,12 +53,12 @@ CREATE TABLE `expert_user` (
 --
 
 CREATE TABLE `regular_user` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `profile_photo` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `profile_photo` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -67,8 +67,8 @@ CREATE TABLE `regular_user` (
 --
 
 CREATE TABLE `topics` (
-  `id` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -77,17 +77,19 @@ CREATE TABLE `topics` (
 --
 
 CREATE TABLE `users` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
+  `email` varchar(225) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`) VALUES
-(1, 'deco3801', 'numpy');
+INSERT INTO `users` (`id`, `email`, `username`, `password`) VALUES
+(1, 'test@uq.com', 'test', 'zpr1208'),
+(2, 'p.zeng@uqconnect.edu.au', 'raytest', '$2y$10$skqgnZ3lx2SiZ7GHiTchU.ropQgARCIiHjYr7AOlZ8gmlN17HksLa');
 
 -- --------------------------------------------------------
 
@@ -96,8 +98,8 @@ INSERT INTO `users` (`id`, `username`, `password`) VALUES
 --
 
 CREATE TABLE `websites_ranking` (
-  `id` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -106,8 +108,8 @@ CREATE TABLE `websites_ranking` (
 --
 
 CREATE TABLE `wish_list` (
-  `id` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- 转储表的索引
@@ -163,43 +165,43 @@ ALTER TABLE `wish_list`
 -- 使用表AUTO_INCREMENT `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用表AUTO_INCREMENT `expert_user`
 --
 ALTER TABLE `expert_user`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用表AUTO_INCREMENT `regular_user`
 --
 ALTER TABLE `regular_user`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用表AUTO_INCREMENT `topics`
 --
 ALTER TABLE `topics`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用表AUTO_INCREMENT `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- 使用表AUTO_INCREMENT `websites_ranking`
 --
 ALTER TABLE `websites_ranking`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用表AUTO_INCREMENT `wish_list`
 --
 ALTER TABLE `wish_list`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

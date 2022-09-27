@@ -1,8 +1,8 @@
 <footer>
-    <div class="footer_container">
+    <div class="container">
         <div class="row vcenter">
             <div class="col-xs-6">
-                <p>&copy; 2021-<?php echo date("Y"); ?></p>
+                <p> 2022 Deco3801 Numpy team</p>
             </div>
         </div>
     </div>
