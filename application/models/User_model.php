@@ -11,15 +11,33 @@ class User_model extends CI_Model
         $this->table = 'users';
     }
 
-    public function get_all()
+    // MIA写的model用户登录
+    // Log in
+    public function login($username, $password)
     {
-        $query = "select * from users";
+        // Validate
+        $this->db->where('username', $username);
+        $this->db->where('password', $password);
+        $result = $this->db->get('users');
+
+        if ($result->num_rows() == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // get data from db by username
+    public function get_data($username)
+    {
+        $query = "select * from users where username = '$username'";
         $information_query = $this->db->query($query);
         $user_data = $information_query->row();
         return $user_data;
-
     }
 
+
+    // check if user exist in db
     public function check_exist($username, $email)
     {
         $this->db->where('name', $username)->or_where('email', $email);
