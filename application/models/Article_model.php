@@ -1,4 +1,3 @@
-
 <!-- 只负责增改查  from article -->
 <!-- Only use for extension -->
 
@@ -19,6 +18,16 @@
         return $art_infor;
     }
 
+
+    //                   ------------------ 南山 ------------------
+
+    // get article from db by article_category
+    public function get_article($category) {
+        $query = "SELECT * FROM articles where category = '$category'";
+        $art_query = $this->db->query($query);
+        $art_infor= $art_query->result();
+        return $art_infor;
+    }
  }
 
 ?>

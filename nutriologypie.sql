@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主机： localhost
--- 生成日期： 2022-09-28 11:41:59
+-- 生成日期： 2022-09-28 12:04:15
 -- 服务器版本： 8.0.29
 -- PHP 版本： 7.2.24-0ubuntu0.18.04.13
 
@@ -29,16 +29,16 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `articles` (
   `article_id` int NOT NULL,
-  `article_title` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
-  `article_category` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
-  `article_link` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL
+  `title` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
+  `category` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
+  `link` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- 转存表中的数据 `articles`
 --
 
-INSERT INTO `articles` (`article_id`, `article_title`, `article_category`, `article_link`) VALUES
+INSERT INTO `articles` (`article_id`, `title`, `category`, `link`) VALUES
 (1, 'aa', 'body health', 'https://www.baidu.com/');
 
 -- --------------------------------------------------------
@@ -53,7 +53,7 @@ CREATE TABLE `article_comment` (
   `article_id` int NOT NULL,
   `rating` int NOT NULL,
   `comment` varchar(1000) NOT NULL,
-  `comment_time` timestamp NOT NULL
+  `time` timestamp NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------

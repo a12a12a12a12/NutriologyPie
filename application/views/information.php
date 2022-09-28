@@ -58,7 +58,7 @@
     </div>
 </div>
 
-<div class="information-middle container">
+<!-- <div class="information-middle container">
     <div class="info-middle-header text-[#C6643D] text-3xl font-bold pt-2 tracking-widest pb-2 uppercase">
         More top reading
     </div>
@@ -83,7 +83,18 @@
             </h3>
         </div>
     </div>
+</div> -->
+
+<div class="information-middle container">
+    <div class="info-middle-header text-[#C6643D] text-3xl font-bold pt-2 tracking-widest pb-2 uppercase">
+        More top reading
+    </div>
+    <hr>
+    <div class="information-topic">
+        <?php echo $article_list; ?>
+    </div>
 </div>
+
 
 
 
