@@ -51,10 +51,10 @@
     background: transparent;
     float: right;
     width: 85%;
-    padding: 0 0 9% 7%;
+    padding: 0 0 5% 7%;
     border-left: 2.5px solid rgba(137, 136, 136, 0.7);
     text-align: center;
-    margin: 8% 14% 0% 0;
+    margin: 9% 14% 0% 0;
 }
 .form-reset .headingtext{
     display: block;
@@ -73,9 +73,32 @@
     font-size: 40px;
 }
 .form-reset .form-group{
-    margin: 0 0 3% 0;
+    margin: 0 0 5% 0;
     position: relative;
     height: 12%;
+}
+.form-reset .sendCode{
+    position: absolute;
+    top: 20%;
+    left: 69%;
+    width: 27%;
+    height: 63%;
+}
+.form-reset .sendCode .btn2{
+    height: 100%;
+    width: 80%;
+    font-size: 22px;
+    color: #fff;
+    background: #69C761;
+    border: none;
+    border-radius: 0 15px 15px 0;
+    margin: 3% 6% 3% 6%;
+    text-transform: capitalize;
+    transition: all 0.5s ease 0s;
+}
+.form-reset .sendCode .btn2:hover{
+    background: #2C8F5A;
+    text-decoration: underline;
 }
 .form-reset .form-group span{
     color: lightslategrey;
@@ -84,7 +107,7 @@
 }
 .form-reset .form-group2{
     padding: 0 17%;
-    margin: 5.7% 3% 1.7% 0.3%;
+    margin: 5% 3% 1.7% 0.3%;
     position: relative;
 }
 .form-register .form-group3{

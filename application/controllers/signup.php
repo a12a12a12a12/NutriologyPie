@@ -3,14 +3,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Signup extends CI_Controller{
     public function index(){
-        // when user forgotpassword, automatic log out
-//        $username = get_cookie('username'); //get the username from cookie
-//        $password = get_cookie('password'); //get the username from cookie
-//        $remember = get_cookie('remember');
-//        $this->session->unset_userdata('logged_in'); //delete login status
-//        set_cookie("username", $username, ''); //set cookie username
-//        set_cookie("password", $password, ''); //set cookie password
-//        set_cookie("remember", $remember, ''); //set cookie remember
+        session_start();
+       $this->load->helper('cookie_helper');
+       // when user forgotpassword, automatic log out
+       $username = get_cookie('username'); //get the username from cookie
+       $password = get_cookie('password'); //get the username from cookie
+       $remember = get_cookie('remember');
+       $this->session->unset_userdata('logged_in'); //delete login status
+       set_cookie("username", $username, ''); //set cookie username
+       set_cookie("password", $password, ''); //set cookie password
+       set_cookie("remember", $remember, ''); //set cookie remember
 
         $data['error']= "";
         $this->load->helper('form');
@@ -20,14 +22,16 @@ class Signup extends CI_Controller{
     }
 
     public function check_signup_information(){
-        // when user forgotpassword, automatic log out
-//        $username = get_cookie('username'); //get the username from cookie
-//        $password = get_cookie('password'); //get the username from cookie
-//        $remember = get_cookie('remember');
-//        $this->session->unset_userdata('logged_in'); //delete login status
-//        set_cookie("username", $username, ''); //set cookie username
-//        set_cookie("password", $password, ''); //set cookie password
-//        set_cookie("remember", $remember, ''); //set cookie remember
+        session_start();
+       $this->load->helper('cookie_helper');
+       // when user forgotpassword, automatic log out
+       $username = get_cookie('username'); //get the username from cookie
+       $password = get_cookie('password'); //get the username from cookie
+       $remember = get_cookie('remember');
+       $this->session->unset_userdata('logged_in'); //delete login status
+       set_cookie("username", $username, ''); //set cookie username
+       set_cookie("password", $password, ''); //set cookie password
+       set_cookie("remember", $remember, ''); //set cookie remember
 
         $data['error']= "";
         $data['email_error'] = "";
@@ -58,8 +62,7 @@ class Signup extends CI_Controller{
                 'logged_in' => false 	//get new username
             );
             $this->session->set_userdata($user_data);
-//            $this->load->view('homepage',$data);
-            echo "1111";
+           $this->load->view('login',$data);
         }else{
             $this->load->view('signup',$data);
         }

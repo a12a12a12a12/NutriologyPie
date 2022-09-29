@@ -71,7 +71,7 @@
                 </div>
                 <div class="box-cartitle">
                     <h3>
-                        <a href="<?php echo base_url(); ?> " style=color:dimgray;> <b> Nutrition Topics </b></a>
+                        <a href="<?php echo base_url(); ?>source" style=color:dimgray;> <b> Nutrition Topics </b></a>
                     </h3>
                 </div>
             </div>
@@ -82,7 +82,7 @@
                 </div>
                 <div class="box-cartitle">
                     <h3>
-                        <a href="<?php echo base_url(); ?> " style=color:dimgray;> <b> Source Websites </b></a>
+                        <a href="<?php echo base_url(); ?>source" style=color:dimgray;> <b> Source Websites </b></a>
                     </h3>
                 </div>
             </div>
@@ -93,7 +93,7 @@
                 </div>
                 <div class="box-cartitle">
                     <h3>
-                        <a href="<?php echo base_url(); ?> " style=color:dimgray;> <b> Experts Online </b></a>
+                        <a href="<?php echo base_url(); ?>expert" style=color:dimgray;> <b> Experts Online </b></a>
                     </h3>
                 </div>
             </div>
@@ -107,7 +107,7 @@
                 <div class="col-md-12">
                     <h3>How can we help you?</h3>
                     <p>Feel free to post your question on our forum. Communicate with other users!</p>
-                    <button type="button" class="btn btn-lg btn-success">Post the Question</button>
+                    <a type="button" class="btn btn-lg btn-success"  href="<?php echo base_url(); ?>discuss">Post your question</a>
                 </div>
             </div>
         </div>
@@ -154,59 +154,14 @@
 
             <div class="row text-center pt-4">
                 <div class="col-md-12">
-                    <button type="button" class="btn btn-lg btn-success">View other topics</button>
+                    <a class="btn btn-lg btn-success" href="<?php echo base_url(); ?>source">View other topics</a>
                 </div>
             </div>
         </div>
     </div>
 
-<!--    <div class="footer  py-5  ">-->
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-<!--                <div class="col-xs-12 col-sm-6 col-md-3 footer-one">-->
-<!--                    <img src="http://velikorodnov.com/html/autotrader/images/logo.png" alt="Logo" style="width:120px;">-->
-<!---->
-<!--                    <p class="pt-4">Cras sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>-->
-<!--                    <div class="social-icons">-->
-<!--                        <a href="https://www.facebook.com/"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>-->
-<!--                        <a href="https://twitter.com/"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>-->
-<!--                        <a href="https://plus.google.com/"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>-->
-<!--                        <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-xs-12 col-sm-6 col-md-3 footer-two">-->
-<!--                    <h5>Information </h5>-->
-<!--                    <ul class="list-unstyled">-->
-<!--                        <li><a href="maintenance.html">Maintenance Tips</a></li>-->
-<!--                        <li><a href="contact.html">Locations</a></li>-->
-<!--                        <li><a href="about.html">Testimonials</a></li>-->
-<!--                        <li><a href="about.html">Careers</a></li>-->
-<!--                        <li><a href="about.html">Partners</a></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--                <div class="col-xs-12 col-sm-6 col-md-3 footer-three">-->
-<!--                    <h5>Helpful Links </h5>-->
-<!--                    <ul class="list-unstyled">-->
-<!--                        <li><a href="maintenance.html">Maintenance Tips</a></li>-->
-<!--                        <li><a href="contact.html">Locations</a></li>-->
-<!--                        <li><a href="about.html">Testimonials</a></li>-->
-<!--                        <li><a href="about.html">Careers</a></li>-->
-<!--                        <li><a href="about.html">Partners</a></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--                <div class="col-xs-12 col-sm-6 col-md-3 footer-four">-->
-<!--                    <h5>Helpful Links </h5>-->
-<!--                    <ul class="list-unstyled">-->
-<!--                        <li><a href="maintenance.html">Maintenance Tips</a></li>-->
-<!--                        <li><a href="contact.html">Locations</a></li>-->
-<!--                        <li><a href="about.html">Testimonials</a></li>-->
-<!--                        <li><a href="about.html">Careers</a></li>-->
-<!--                        <li><a href="about.html">Partners</a></li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+
+    
 <?php echo form_close(); ?>
 
 

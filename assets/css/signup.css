@@ -61,10 +61,10 @@
     background: transparent;
     float: right;
     width: 85%;
-    padding: 0 0 9% 7%;
+    padding: 0 0 5% 7%;
     border-left: 2.5px solid rgba(137, 136, 136, 0.7);
     text-align: center;
-    margin: 8% 14% 0 0;
+    margin: 8.5% 14% 0 0;
 }
 .form-register .headingtext{
     display: block;
@@ -83,7 +83,7 @@
     font-size: 40px;
 }
 .form-register .form-group{
-    margin: 0 0 3% 0;
+    margin: 0 0 5% 0;
     position: relative;
     height: 12%;
 }
@@ -95,7 +95,7 @@
 }
 .form-register .form-group2{
     padding: 0 17%;
-    margin: 5.7% 3% 1.7% 0.3%;
+    margin: 5% 3% 1.7% 0.3%;
     position: relative;
 }
 .form-register .form-group3{
