@@ -152,12 +152,14 @@ a .material-icons {
 
 }
 
+
 .profile-page .description {
-    margin: 5.071rem auto 0;
+    /* margin: 5.071rem auto 0; */
     max-width: 800px;
     color: black;
     font-weight: 50px;
     font-size: 15px;
+    margin-top: 50px;
 }
 
 p {

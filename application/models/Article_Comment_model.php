@@ -22,7 +22,18 @@
         where a.article_id = b.article_id
          and a.username = '$username'";
         $article_query = $this->db->query($query);
-        $article_data = $article_query->row();
+        $article_data = $article_query->result();
         return $article_data;
+    }
+
+    // count the number of comments
+    public function count_comment($username){
+        $query = "select count(*) as count
+        from article_comment a, articles b 
+        where a.article_id = b.article_id
+         and a.username = '$username'";
+        $article_query = $this->db->query($query);
+        $article_data = $article_query->row();
+        return $article_data->count;
     }
  }
