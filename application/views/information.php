@@ -1,27 +1,18 @@
 <div class="information-top">
     <div class="top-left">
-        <img class="ml-5 h-60 w-96 pb-2" src="<?php echo base_url(); ?>assets/images/information.png" alt="information">
-        <h3 class="text-[#0B6B2C] ml-5 mt-2 text-center text-xl font-extrabold capitalize">the 7 Ingredients Should Have
-        </h3>
+        <a href="<?php echo $top_article->link; ?>">
+            <img class="ml-5 h-60 w-96 pb-2" src="<?php echo base_url(); ?>assets/images/information.png"
+                alt="information">
+            <h3 class="text-[#0B6B2C] ml-5 mt-2 text-center text-xl font-extrabold capitalize">
+                The Top rated article
+            </h3>
+        </a>
     </div>
     <div class="top-right">
-        <div class="title capitalize text-left text-2xl font-bold "> the 7 Ingredients Your Multivitamin
-            Should Have:
+        <div class="title capitalize text-left text-2xl font-bold "> <?php echo $top_article->title; ?>
         </div>
-        <div class="text text-xl font-medium">
-            1. Vitamin D
-            2. Magnesium
-            3. Calcium
-            4. Zinc
-            5. Iron
-            6. Folate
-            7. Vitamin B-12
-            <br>
-            <br>
-            “I try to get all of my nutrients from my kitchen instead of my medicine cabinet, but as a realist, I know
-            that meeting my nutrition needs all of the time is not possible,” says Bonnie Taub-Dix, RDN, creator of
-            Better Than Dieting. On top of that, there may be other life factors that make supplementation necessary —
-            pregnancy, menopause, or even chronic conditions.
+        <div class="text text-xl font-medium pl-5">
+            <?php echo $top_article->title; ?>
         </div>
     </div>
 </div>
@@ -58,33 +49,6 @@
     </div>
 </div>
 
-<!-- <div class="information-middle container">
-    <div class="info-middle-header text-[#C6643D] text-3xl font-bold pt-2 tracking-widest pb-2 uppercase">
-        More top reading
-    </div>
-    <hr>
-    <div class="information-topic">
-        <div class="more-topic">
-            <a href="#"><img class="ml-5 h-52 w-72 pb-2" src="<?php echo base_url(); ?>assets/images/information.png"
-                    alt="information"></a>
-            <h3 class="text-[#0B6B2C] mt-2 text-left text-xl font-bold capitalize">the 7 Ingredients Should Have
-            </h3>
-        </div>
-        <div class="more-topic">
-            <a href="#"><img class="ml-5 h-52 w-72 pb-2" src="<?php echo base_url(); ?>assets/images/information.png"
-                    alt="information"></a>
-            <h3 class="text-[#0B6B2C]  mt-2 text-left text-xl font-bold capitalize">the 7 Ingredients Should Have
-            </h3>
-        </div>
-        <div class="more-topic">
-            <a href="#"><img class="ml-5 h-52 w-72 pb-2" src="<?php echo base_url(); ?>assets/images/information.png"
-                    alt="information"></a>
-            <h3 class="text-[#0B6B2C] mt-2 text-left text-xl font-bold capitalize">the 7 Ingredients Should Have
-            </h3>
-        </div>
-    </div>
-</div> -->
-
 <div class="information-middle container">
     <div class="info-middle-header text-[#C6643D] text-3xl font-bold pt-2 tracking-widest pb-2 uppercase">
         More top reading
@@ -93,6 +57,10 @@
     <div class="information-topic">
         <?php echo $article_list; ?>
     </div>
+</div>
+
+<div id="testing">
+
 </div>
 
 
@@ -163,4 +131,28 @@
 .information-middle .information-topic .more-topic h3 {
     padding-left: 2em;
 }
+
+a:hover {
+    opacity: 0.8;
+    text-decoration: none;
+}
 </style>
+
+<!-- <script>
+async function getArticle() {
+    const response = await fetch(
+        'http://localhost/NutriologyPie/information/fetch');
+    console.log('====================================');
+    console.log(response);
+    console.log('====================================');
+    const data = await response.json();
+    console.log(data);
+    return data;
+}
+getArticle();
+// document.getElementById("testing").innerHTML =
+//     "<div class='topic'>" +
+//     "<a href ='#'><img class='ml-5 h-40 w-30 pb-2' src='<?php echo base_url(); ?>assets/images/information.png' alt ='information'></a>" +
+//     "<h3 class = 'text-[#0B6B2C]  mt-2 text-left text-2xl font-bold capitalize'> the 7 Ingredients Should Have </h3>" +
+//     "</div>";
+</script> -->

@@ -1,9 +1,3 @@
-<!-- 只负责增改查  from article -->
-<!-- Only use for extension -->
-
-<!-- 为information页面拉取数据 -->
-
-
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  //put your code here 
  class Article_model extends CI_Model{
@@ -23,11 +17,19 @@
 
     // get article from db by article_category
     public function get_article($category) {
-        $query = "SELECT * FROM articles where category = '$category'";
+        $query = "SELECT articles.link,articles.title,AVG(article_comment.rating) as avg_rating FROM articles,article_comment where category = '$category' and articles.article_id = article_comment.article_id GROUP BY articles.article_id ORDER BY avg_rating DESC";
         $art_query = $this->db->query($query);
         $art_infor= $art_query->result();
         return $art_infor;
     }
+
+    // get top article from db by article_category
+    // public function get_top_article($category) {
+    //     $query = "SELECT articles.link,articles.title,AVG(article_comment.rating) FROM articles,article_comment where category = '$category' and articles.article_id = article_comment.article_id GROUP BY articles.article_id ORDER BY AVG(article_comment.rating) DESC LIMIT 1";
+    //     $art_query = $this->db->query($query);
+    //     $art_infor= $art_query->result();
+    //     return $art_infor;
+    // }
  }
 
 ?>
