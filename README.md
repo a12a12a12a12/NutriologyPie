@@ -23,7 +23,11 @@ taskkill /F /PID 6088
 **Download link: https://git-scm.com/**
 * Clone the repo: **git clone https://github.com/a12a12a12a12/NutriologyPie.git**
 * Pull the latest version: **git pull**
-* Commit your changes: **git commit -m""**
+
+-------------------------------------------
+* Check your work: **git status**
+* Add your work: **git add .** - . means all
+* Commit your changes: **git commit -m"message for others"**
 * Push your code into the repo: **git push**
 > Before committing the code: Use **git status** to check what you have modified and **git add .** it
 
