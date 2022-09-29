@@ -12,6 +12,7 @@ class User_model extends CI_Model
     }
 
     // MIA写的model用户登录
+    // -----------------------------------------------------------------------------------
     // Log in
     public function login($username, $password)
     {
@@ -21,9 +22,9 @@ class User_model extends CI_Model
         $result = $this->db->get('users');
 
         if ($result->num_rows() == 1) {
-            return true;
+            return 1;
         } else {
-            return false;
+            return 0;
         }
     }
 
@@ -35,6 +36,35 @@ class User_model extends CI_Model
         $user_data = $information_query->row();
         return $user_data;
     }
+
+    // check if the user is expert
+    public function check_expert($username){
+        $query = "select * from users where username = '$username'";
+        $information_query = $this->db->query($query);
+        $user_data = $information_query->row();
+        if($user_data->is_expert == 1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    // check if the user's bank information is complete
+    public function check_bank($username){
+        $query = "select * from users where username = '$username'";
+        $information_query = $this->db->query($query);
+        $user_data = $information_query->row();
+        if($user_data->BSB == null || $user_data->account_number == null){
+            return 0;
+        }else{
+            return 1;
+        }
+    }   
+
+    
+
+    // --------------------------------------------------------------------------------------------
+    // 以上是MIA写的用于profile
 
 
     // check if user exist in db
