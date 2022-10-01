@@ -299,7 +299,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bottom">
+            <div class="bottom pt-2">
                 <div class="nest-bottom w-full">
                     <div class="left">
                         <img class="h-12 w-12 rounded-full" src="<?php echo base_url(); ?>assets/images/logo.png""
