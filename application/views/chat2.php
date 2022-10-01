@@ -226,7 +226,7 @@
                         <p>8:17pm </p>
                     </div>
                 </div>
-                <div class="user-message pb-4">
+                <div class="user-message pb-4 mr-2">
                     <div class="time text-base font-medium">
                         <p>8:25pm </p>
                     </div>
@@ -235,7 +235,7 @@
                             a page when looking at its layout.</p>
                     </div>
                 </div>
-                <div class="user-message pb-4">
+                <div class="user-message pb-4 mr-2">
                     <div class="time text-base font-medium">
                         <p>8:30pm </p>
                     </div>
@@ -244,7 +244,7 @@
                             a page when looking at its layout.</p>
                     </div>
                 </div>
-                <div class="user-message pb-4">
+                <div class="user-message pb-4 mr-2">
                     <div class="time text-base font-medium">
                         <p>8:25pm </p>
                     </div>
@@ -277,7 +277,7 @@
                         <p>8:45pm </p>
                     </div>
                 </div>
-                <div class="user-message pb-4">
+                <div class="user-message pb-4 mr-2">
                     <div class="time text-base font-medium">
                         <p>8:30pm </p>
                     </div>
