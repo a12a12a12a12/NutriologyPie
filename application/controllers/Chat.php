@@ -18,9 +18,17 @@ class chat extends CI_Controller {
         }else{
             $username = "john";
             $this->load->model('chat_model');
-            // $this->chat_model->send_message($username, $with_who, $message);
-            $history_chat_users = $this->chat_model->get_history_chat_user($username,$with_who);
-            $active_user = $this->chat_model->get_history_chat_user_active($username,$with_who);
+            if ($this->chat_model->check_exist($username, $with_who)) {
+                $history_chat_users = $this->chat_model->get_history_chat_user($username,$with_who);
+                $active_user = $this->chat_model->get_history_chat_user_active($username,$with_who);
+            }else{
+                $history_chat_users = $this->chat_model->get_history_chat_user_not_exist($username);
+                $active_user = $this->chat_model->get_history_chat_user_active_first($with_who);
+                // get current time and date
+                $date = date('Y-m-d H:i:s');
+
+            }
+
             $history_chat_view = "";
             $data['active_user'] = $active_user[0];
             foreach ($history_chat_users as $users) {
