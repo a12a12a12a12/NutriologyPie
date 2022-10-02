@@ -102,7 +102,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: stretch;
     align-content: center;
 }
@@ -123,7 +123,7 @@
 }
 
 .information-middle .information-topic .more-topic {
-    width: 30%;
+    width: 33%;
     margin-top: 2em;
     margin-bottom: 2em;
 }
@@ -137,22 +137,3 @@ a:hover {
     text-decoration: none;
 }
 </style>
-
-<!-- <script>
-async function getArticle() {
-    const response = await fetch(
-        'http://localhost/NutriologyPie/information/fetch');
-    console.log('====================================');
-    console.log(response);
-    console.log('====================================');
-    const data = await response.json();
-    console.log(data);
-    return data;
-}
-getArticle();
-// document.getElementById("testing").innerHTML =
-//     "<div class='topic'>" +
-//     "<a href ='#'><img class='ml-5 h-40 w-30 pb-2' src='<?php echo base_url(); ?>assets/images/information.png' alt ='information'></a>" +
-//     "<h3 class = 'text-[#0B6B2C]  mt-2 text-left text-2xl font-bold capitalize'> the 7 Ingredients Should Have </h3>" +
-//     "</div>";
-</script> -->
