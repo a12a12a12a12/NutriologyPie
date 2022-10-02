@@ -32,8 +32,26 @@ class information extends CI_Controller {
         	</div>
 			';
 		}
+		// if no article found pop up a message
+		if ($articles == ""){
+			$articles = '
+			<div class="more-topic">
+				<h3 class="mt-2 text-left w-72 ml-4 text-[#0B6B2C] text-xl font-bold capitalize">No article found</h3>
+			</div>
+			';
+			// give user a link to our source website
+			$data['top_article'] = '
+			<div class="more-topic">
+				<a href="https://www.healthline.com/nutrition">
+					<img class="ml-5 h-52 w-72 pb-2" src="http://localhost/NutriologyPie/assets/images/information.png" alt="information">
+				</a>
+				<h3 class="mt-2 text-left w-72 ml-4 text-[#0B6B2C] text-xl font-bold capitalize">Click here to go to our source website</h3>
+			</div>'
+			;
+		}else {
+			$data['top_article'] = $article_list[0];
+		}
 		$data['article_list'] = $articles;
-		$data['top_article'] = $article_list[0];
 		$this->load->view('information',$data);
 	}
 
