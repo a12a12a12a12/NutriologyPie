@@ -29,19 +29,19 @@
             <div class="top-right">
                 <h1>Choose The Topics</h1>
                 <div class="topics mx-2">
-                    <div class="topic-active">
+                    <div class="topic" onclick="topicToggle(0)">
                         <a type="button">Healthy Eating</a>
                     </div>
-                    <div class="topic">
+                    <div class="topic" onclick="topicToggle(1)">
                         <a type="button">Meal Prep</a>
                     </div>
-                    <div class="topic">
+                    <div class="topic" onclick="topicToggle(2)">
                         <a type="button">Lifestyle Diets</a>
                     </div>
-                    <div class="topic">
+                    <div class="topic" onclick="topicToggle(3)">
                         <a type="button">Weight Control</a>
                     </div>
-                    <div class="topic">
+                    <div class="topic" onclick="topicToggle(4)">
                         <a type="button">Products</a>
                     </div>
                 </div>
@@ -59,6 +59,18 @@
 
 
 </div>
+
+<script>
+function topicToggle(number) {
+    // set the active topic
+    let topics = document.getElementsByClassName("topic");
+    for (let i = 0; i < topics.length; i++) {
+        topics[i].classList.remove("topic-active");
+    }
+    topics[number].classList.add("topic-active");
+
+}
+</script>
 
 
 <style>
