@@ -8,7 +8,6 @@
 <div class="extension">
     <header>
     </header>
-    <!-- <?php echo form_open(base_url() . 'Extension_expert/testing'); ?> -->
     <div class="main mx-4 mt-2">
         <div class="top">
             <div class="top-left">
@@ -16,7 +15,7 @@
                 <div class="rate">
                     <p>4.6<span>/5</span></p>
                     <div class="stars">
-                        <i class="bi bi-star-fill "></i>
+                        <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
@@ -46,6 +45,9 @@
                     <div class="topic" onclick="topicToggle(4)">
                         <a type="button">Products</a>
                     </div>
+                    <div class="topic" onclick="topicToggle(5)">
+                        <a type="button">Conditions</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -54,16 +56,14 @@
             <div class="comment">
                 <input type="text" value="-Write down your comment:" id="content">
             </div>
-            <div class="success"></div>
-            <a type="submit" onclick="testing()">Save</a>
-            <!-- <button class="btn btn-success px-3" type="submit">Save</button> -->
+            <div class="success text-center w-full text-sm pt-1"></div>
+            <a type="button" onclick="save()">Save</a>
         </div>
     </div>
-    <!-- <?php echo form_close(); ?> -->
 </div>
 
 <script>
-let category = "0";
+let category = "999";
 
 function topicToggle(number) {
     // set the active topic
@@ -86,7 +86,7 @@ function validCheck() {
         return false;
     }
     // check if the category is selected
-    if (category == "0") {
+    if (category == "999") {
         return false;
     }
     //check if the content is empty
@@ -97,7 +97,7 @@ function validCheck() {
     return true;
 }
 
-function testing() {
+function save() {
     let content = document.getElementById("content").value;
     let rate = document.getElementById("rate").value;
     console.log(content);
@@ -118,14 +118,28 @@ function testing() {
                 document.getElementById("rate").value = "";
                 //output the success message
                 let success = document.getElementsByClassName("success");
+                // make the message color green
+                success[0].style.color = "green";
                 success[0].innerHTML = "Your comment has been saved!";
             }
         });
     } else {
         let success = document.getElementsByClassName("success");
+        success[0].style.color = "red";
         success[0].innerHTML = "Please check your input!";
     }
 }
+
+// after 1 min have a ajax request to increase the click number
+setInterval(function() {
+    $.ajax({
+        url: "<?php echo base_url() . 'Extension_expert/clickIncrease'; ?>",
+        type: "GET",
+        success: function(data) {
+            console.log(data);
+        }
+    });
+}, 60000);
 </script>
 
 
@@ -278,7 +292,7 @@ header {
 
 .main .bottom {
     width: 100%;
-    height: 45%;
+    height: 46%;
     background: rgba(217, 217, 217, 0.44);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
@@ -315,7 +329,7 @@ header {
 
 .main .bottom a {
     margin-left: 10px;
-    margin-top: 8px;
+    margin-top: 4px;
     font-size: 10px;
     padding: 5px;
     background: rgba(111, 109, 109, 0.7);
