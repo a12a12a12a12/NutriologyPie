@@ -1,5 +1,6 @@
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 
@@ -7,6 +8,7 @@
 <div class="extension">
     <header>
     </header>
+    <!-- <?php echo form_open(base_url() . 'Extension_expert/testing'); ?> -->
     <div class="main mx-4 mt-2">
         <div class="top">
             <div class="top-left">
@@ -23,7 +25,7 @@
                 </div>
                 <div class="select-rate text-center">
                     <h2>Type your Rate: </h2>
-                    <input type="number" class="text-center">
+                    <input type="number" id="rate" class="text-center" value="">
                 </div>
             </div>
             <div class="top-right">
@@ -50,17 +52,19 @@
         <div class="bottom">
             <h1>Comments</h1>
             <div class="comment">
-                <input type="text" value="-Write down your comment:">
-
+                <input type="text" value="-Write down your comment:" id="content">
             </div>
-            <a type="button">Save</a>
+            <div class="success"></div>
+            <a type="submit" onclick="testing()">Save</a>
+            <!-- <button class="btn btn-success px-3" type="submit">Save</button> -->
         </div>
     </div>
-
-
+    <!-- <?php echo form_close(); ?> -->
 </div>
 
 <script>
+let category = "0";
+
 function topicToggle(number) {
     // set the active topic
     let topics = document.getElementsByClassName("topic");
@@ -68,7 +72,59 @@ function topicToggle(number) {
         topics[i].classList.remove("topic-active");
     }
     topics[number].classList.add("topic-active");
+    category = number;
+}
 
+function getCategory() {
+    return category;
+}
+
+function validCheck() {
+    let rate = document.getElementById("rate").value;
+    // check if the rate is between 1 and 5
+    if (rate < 1 || rate > 5) {
+        return false;
+    }
+    // check if the category is selected
+    if (category == "0") {
+        return false;
+    }
+    //check if the content is empty
+    let content = document.getElementById("content").value;
+    if (content == "-Write down your comment:") {
+        return false;
+    }
+    return true;
+}
+
+function testing() {
+    let content = document.getElementById("content").value;
+    let rate = document.getElementById("rate").value;
+    console.log(content);
+    let category = getCategory();
+    console.log(category);
+    if (validCheck()) {
+        $.ajax({
+            url: "<?php echo base_url() . 'Extension_expert/testing'; ?>",
+            type: "GET",
+            data: {
+                content: content,
+                category: category,
+                rate: rate
+            },
+            success: function(data) {
+                // clear the content and rate 
+                document.getElementById("content").value = "";
+                document.getElementById("rate").value = "";
+                //output the success message
+                let success = document.getElementsByClassName("success");
+                success[0].innerHTML = "Your comment has been saved!";
+            }
+        });
+    } else {
+        let success = document.getElementsByClassName("success");
+        success[0].innerHTML = "Please check your input!";
+    }
 }
 </script>
 
