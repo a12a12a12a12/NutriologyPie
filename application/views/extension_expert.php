@@ -7,6 +7,7 @@
 
 <div class="extension">
     <header>
+        <?php echo $chat_user_list; ?>
     </header>
     <div class="main mx-4 mt-2">
         <div class="top">
