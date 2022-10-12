@@ -23,6 +23,14 @@
         return $art_infor;
     }
 
+    // get all article information from db
+    public function get_all_article() {
+        $query = "SELECT * FROM articles ORDER BY article_id DESC";
+        $art_query = $this->db->query($query);
+        $art_infor= $art_query->result();
+        return $art_infor;
+    }
+
     // get top article from db by article_category
     // public function get_top_article($category) {
     //     $query = "SELECT articles.link,articles.title,AVG(article_comment.rating) FROM articles,article_comment where category = '$category' and articles.article_id = article_comment.article_id GROUP BY articles.article_id ORDER BY AVG(article_comment.rating) DESC LIMIT 1";

@@ -16,6 +16,19 @@ class Extension_expert extends CI_Controller {
 		return "888";
 	}
 
+
+	//return json data
+	public function articleList(){
+		$this->load->model('Article_model');
+		$art_infor = $this->Article_model->get_all_article();
+		if($art_infor != null){
+			echo json_encode($art_infor); //send result back
+		}else{
+			echo  ""; // no result found
+		}
+
+	}
+
 	//save the comment
 	public function testing()
 	{	
