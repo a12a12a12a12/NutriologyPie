@@ -10,12 +10,12 @@ class Extension_expert extends CI_Controller {
 		$this->load->helper('url');
 		// $this->load->view('components/header');
 
-		$urlData = $this->input->get('urlData');
+		// $urlData = $this->input->get('urlData');
 
-		$jsonData = json_decode($urlData, true);
+		// $jsonData = json_decode($urlData, true);
 
-		echo $this->input->get('urlData');
-		echo $jsonData['username'];
+		// echo $this->input->get('urlData');
+		// echo $jsonData['username'];
 
 
 		$profile_username = $this->session->userdata('username');
@@ -28,7 +28,7 @@ class Extension_expert extends CI_Controller {
 		$data['profile_username']= $profile_username;
 
 		// load view
-		$this->load->view('extension_expert',$data);
+		$this->load->view('extension_user',$data);
 	}
 
 	// check if 有没有登录
